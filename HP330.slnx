@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/HP330.Protocol/HP330.Protocol.csproj" />
+    <Project Path="src/HP330.Serial/HP330.Serial.csproj" />
+    <Project Path="src/HP330.Cli/HP330.Cli.csproj" />
+    <Project Path="src/HP330.App/HP330.App.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/HP330.Tests/HP330.Tests.csproj" />
+  </Folder>
+</Solution>
