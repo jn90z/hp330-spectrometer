@@ -1,4 +1,5 @@
 using HP330.Serial;
+using Xunit;
 
 namespace HP330.Tests;
 
