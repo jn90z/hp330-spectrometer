@@ -1,0 +1,10 @@
+<Window x:Class="HP330.App.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="HP330 Spectrometer" Height="600" Width="1000">
+  <Grid Margin="24">
+    <StackPanel>
+      <TextBlock Text="HP330 Spectrometer" FontSize="30" FontWeight="SemiBold" />
+      <TextBlock Margin="0,8,0,0" Text="USB protocol discovery in progress" FontSize="16" />
+      <TextBlock Margin="0,24,0,0" Text="Known hardware: USB VID 0483 / PID 5740" />
+      <TextBlock Margin="0,8,0,0" Text="Measurement commands remain disabled until verified against captured HP330 traffic." TextWrapping="Wrap" />
+    </StackPanel>
+  </Grid>
+</Window>
