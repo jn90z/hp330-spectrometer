@@ -1,10 +1,34 @@
-<Window x:Class="HP330.App.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="HP330 Spectrometer" Height="600" Width="1000">
+<Window x:Class="HP330.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="HP330 Spectrometer" Height="600" Width="1000">
   <Grid Margin="24">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
     <StackPanel>
-      <TextBlock Text="HP330 Spectrometer" FontSize="30" FontWeight="SemiBold" />
-      <TextBlock Margin="0,8,0,0" Text="USB protocol discovery in progress" FontSize="16" />
-      <TextBlock Margin="0,24,0,0" Text="Known hardware: USB VID 0483 / PID 5740" />
-      <TextBlock Margin="0,8,0,0" Text="Measurement commands remain disabled until verified against captured HP330 traffic." TextWrapping="Wrap" />
+      <TextBlock Text="HP330 Spectrometer" FontSize="30" FontWeight="SemiBold"/>
+      <TextBlock Margin="0,8,0,0" Text="USB diagnostics / protocol discovery" FontSize="16"/>
+    </StackPanel>
+
+    <Border Grid.Row="1" Margin="0,24,0,0" Padding="16" BorderThickness="1" CornerRadius="6">
+      <StackPanel>
+        <DockPanel>
+          <TextBlock Text="Detected instrument" FontSize="18" FontWeight="SemiBold"/>
+          <Button DockPanel.Dock="Right" Width="90" Content="Refresh" Click="Refresh_Click"/>
+        </DockPanel>
+        <TextBlock x:Name="DeviceStatus" Margin="0,14,0,0" Text="Scanning..."/>
+        <TextBlock x:Name="DeviceDetails" Margin="0,6,0,0" TextWrapping="Wrap"/>
+      </StackPanel>
+    </Border>
+
+    <StackPanel Grid.Row="2" Margin="0,24,0,0">
+      <TextBlock Text="Safe discovery mode" FontSize="18" FontWeight="SemiBold"/>
+      <TextBlock Margin="0,8,0,0" TextWrapping="Wrap"
+                 Text="The application only enumerates the verified HP330 USB identity (VID 0483 / PID 5740). It does not open the COM port or transmit commands."/>
     </StackPanel>
   </Grid>
 </Window>
